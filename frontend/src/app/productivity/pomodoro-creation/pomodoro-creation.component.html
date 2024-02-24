@@ -1,0 +1,45 @@
+<div *ngIf="timer">
+  <button mat-flat-button (click)="goBack()">Back</button>
+
+  <form [formGroup]="timerForm" (ngSubmit)="onSubmit()" class="form">
+    <mat-form-field class="full-width">
+      <mat-label>Title</mat-label>
+      <input id="title" matInput type="text" formControlName="title" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Description</mat-label>
+      <input
+        id="description"
+        matInput
+        type="text"
+        formControlName="description" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Work Session Length (minutes)</mat-label>
+      <input
+        id="timerLength"
+        matInput
+        type="number"
+        formControlName="timerLength" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Break Session Length (minutes)</mat-label>
+      <input
+        id="breakLength"
+        matInput
+        formControlName="breakLength"
+        type="number" />
+    </mat-form-field>
+
+    <button mat-flat-button type="submit" [disabled]="!timerForm.valid">
+      Save
+    </button>
+  </form>
+
+  <mat-card *ngIf="success">
+    <mat-card-content> Success! </mat-card-content>
+  </mat-card>
+</div>
