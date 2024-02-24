@@ -1,0 +1,14 @@
+<mat-card appearance = "outlined">
+    <mat-card-header>
+        <mat-card-title>
+            {{timer.title}}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        {{timer.description}}
+    </mat-card-content>
+    
+    <button mat-button (click)="startOrResume()">{{startOrResumeText}}</button>   
+    <button mat-button (click)="pomodoroTimer?.pause()">PAUSE</button>
+    <mat-card-content> {{pomodoroTimer?.countdown$ | async | timePipe:timer.timerLength}} </mat-card-content>
+</mat-card>
