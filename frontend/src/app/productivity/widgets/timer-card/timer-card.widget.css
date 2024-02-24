@@ -1,0 +1,41 @@
+.header-row {
+    display: flex;
+    justify-content: space-between;
+}
+.icon-div {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 1%;
+}
+
+.display {
+    border: 1px red;
+}
+
+.time-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.timer-container {
+    max-width: 500px;
+}
+
+.time-card {
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+.description-container {
+    margin: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+.button {
+    margin-inline: 1%;
+}

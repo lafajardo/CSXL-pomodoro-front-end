@@ -1,0 +1,9 @@
+<div class="page-container">
+  <button mat-flat-button routerLink="/productivity/edit/0">
+    Create Timer
+  </button>
+
+
+  <h2>My Timers</h2>
+  <timer-card [timer]="timer" *ngFor="let timer of timers" />
+</div>

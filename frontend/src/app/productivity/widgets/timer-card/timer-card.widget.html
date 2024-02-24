@@ -1,0 +1,43 @@
+
+<mat-card appearance="outlined" class="timer-container">
+  <div class="header-row">
+    <mat-card-header>
+      <mat-card-title>
+        {{ timer.title }}
+      </mat-card-title>
+    </mat-card-header>
+    <div class="icon-div">
+      <mat-icon [routerLink]="['/productivity/edit', timer.id]" fontIcon="edit">
+      </mat-icon>
+      <mat-icon (click)="deleteTimer()" fontIcon="delete"> </mat-icon>
+    </div>
+  </div>
+
+  <mat-card appearance="outlined" class="time-card">
+    <div class="time-row">
+      <div>
+        <mat-card-content>
+          {{ pomodoroTimer?.state | statePipe }}
+        </mat-card-content>
+      </div>
+      <div>
+        <mat-card-content>
+          {{ pomodoroTimer?.countdown$ | async | timePipe: timer.timerLength }}
+        </mat-card-content>
+      </div>
+    </div>
+  </mat-card>
+  <div class="description-container">
+    <mat-card-content>
+      {{ timer.description }}
+    </mat-card-content>
+  </div>
+  <div class="button-container">
+    <button mat-stroked-button class="button" (click)="startOrResume()">
+      {{ startOrResumeText }}
+    </button>
+    <button mat-stroked-button class="button" (click)="pomodoroTimer?.pause()">
+      PAUSE
+    </button>
+  </div>
+</mat-card>
