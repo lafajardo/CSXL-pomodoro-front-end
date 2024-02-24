@@ -1,0 +1,11 @@
+<button mat-flat-button routerLink="/productivity/edit/0">Create Timer</button>
+
+<h2>My Timers</h2>
+<ul class="timers">
+  <li *ngFor="let timer of timers">
+    <button mat-flat-button [routerLink]="['/productivity/edit', timer.id]">
+      <span class="id">{{ timer.id }}</span>
+      <span class="title">{{ timer.title }}</span>
+    </button>
+  </li>
+</ul>
